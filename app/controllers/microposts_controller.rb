@@ -4,9 +4,10 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Message created!"
       redirect_to root_url
     else
+      @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
       render 'static_pages/home'
     end
   end
@@ -15,13 +16,13 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.find_by(id: params[:id])
     return redirect_to root_url if @micropost.nil?
     @micropost.destroy
-    flash[:success] = "Micropost deleted"
+    flash[:success] = "Message deleted"
     redirect_to request.referrer || root_url
     end
   end
-
-  private
+  
+    private
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :tag)
 
 end

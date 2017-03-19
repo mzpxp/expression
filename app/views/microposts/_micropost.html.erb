@@ -1,12 +1,14 @@
-<li id="micropost-
-<%= micropost.id %>
-">
+<li id="micropost-<%= micropost.id %>">
   
 <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
 
   <span class="user">
-<%= link_to micropost.user.name, micropost.user %>
-</span>
+    <% if micropost.user == current_user %>
+      <%= current_user.name %>
+    <% else %>
+      匿名
+    <% end %>
+  </span>
   <span class="content">
 <%= micropost.content %>
 </span>
