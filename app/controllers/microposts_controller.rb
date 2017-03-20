@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
     end
   end
   
-    private
+      private
   def micropost_params
     params.require(:micropost).permit(:content, :tag)
 
