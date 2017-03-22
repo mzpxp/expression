@@ -11,9 +11,8 @@
   </span>
   <span class="content">
 <%= micropost.content %>
-</span>
+  </span>
   <span class="timestamp">
-    Posted 
 <%= time_ago_in_words(micropost.created_at) %>
  ago.
  
@@ -22,9 +21,6 @@
       
 <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
-
-    
-<% end %>
-
+ <% end %>
   </span>
 </li>
