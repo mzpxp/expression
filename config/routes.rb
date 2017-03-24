@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :microposts
-  resources :microposts do
-    resources :likes, only: [:create, :destroy]
-  end
+
+  post   'microposts/:micropost_id/likes' , to: 'likes#create'
+  delete 'microposts/:micropost_id/likes' , to: 'likes#destroy'
 end

@@ -1,17 +1,21 @@
 <% if logged_in? %>
   <% if micropost.like_user(current_user.id) %>
-    <%= link_to micropost_like_path(micropost.like, micropost_id: micropost.id), method: :delete, id: "like-button", remote: true do %>
-      <%= image_tag("heart_red.png") %>
-      <span>
-        <%= micropost.likes.count %>
-      </span>
+    <%=  form_for(micropost, :url => "/microposts/#{micropost.id}/likes", :method => :delete, :remote => true, :id => "like-button") do %>
+      <%= button_tag do %>
+        <%= image_tag("heart_red.png") %>
+        <span>
+          <%= micropost.likes.count %>
+        </span>
+      <% end %>
     <% end %>
   <% else %>
-    <%= button_to micropost_likes_path(micropost), id: "like-button", remote: true do %>
-      <%= image_tag("heart_gray.png") %>
-      <span>
-        <%= micropost.likes.count %>
-      </span>
+    <%=  form_for(micropost, :url => "/microposts/#{micropost.id}/likes", :method => :post, :remote => true, :id => "like-button") do %>
+      <%= button_tag do %>
+          <%= image_tag("heart_gray.png") %>
+          <span>
+            <%= micropost.likes.count %>
+          </span>
+        <% end %>
     <% end %>
   <% end %>
 <% else %>
