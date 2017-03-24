@@ -4,8 +4,6 @@ class LikesController < ApplicationController
     @likes = Like.where(micropost_id: params[:micropost_id])
     @microposts = Micropost.all
     @micropost = Micropost.find(params[:micropost_id])
-
-    p @micropost
   end
 
   def destroy
@@ -14,8 +12,8 @@ class LikesController < ApplicationController
     @likes = Like.where(micropost_id: params[:micropost_id])
     @microposts = Micropost.all
     @micropost = Micropost.find(params[:micropost_id])
-    p @micropost
 
+    p "destroy"
   end
 end
 
