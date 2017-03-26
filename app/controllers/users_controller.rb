@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
+   @likes = @user.likes
+   @like_microposts = []
+   @likes.each do |like|
+   @like_microposts<<Micropost.find(like.micropost_id)
+   end
   end
   
   def new

@@ -48,48 +48,25 @@
   <div class ="row navbuttons">
     <div class="col-md-12">
       <div class="btn-group btn-group-justified" role="group">
-            <!--<a href="feed" class="btn btn-default " role="button">-->
-            <!--  <span class="glyphicon glyphicon-globe" aria-hidden="true">-->
-            <!--  </span>-->
-            <!--  <br>-->
-            <!--  All-->
-            <!--  </a>-->
+            
             <%= link_to  timeline_path, class: "btn btn-default" do %>
-              <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
               <br/>
               Timeline
             <% end %>
             
-            <!--<a href="/feed/Friends" class="btn btn-default " role="button">-->
-            <!--  <span class="glyphicon glyphicon-heart" aria-hidden="true">-->
-            <!--  </span>-->
-            <!--  <br>-->
-            <!--  Like-->
-            <!--  </a>-->
             <%= link_to  top10_microposts_path, class: "btn btn-default" do %>
-              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
               <br/>
               Recommend
             <% end %>
             
-            <!--<a href="https://" class="btn btn-default " role="button">-->
-            <!--  <span class="glyphicon glyphicon-send" aria-hidden="true">-->
-            <!--  </span>-->
-            <!--  <br>-->
-            <!--  Post-->
-            <!--  </a>-->
             <%= link_to  new_micropost_path, class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
               <br/>
               Post
             <% end %>
             
-            <!--<a href="/profile/current_user" class="btn btn-default" role="button">-->
-            <!--  <span class="glyphicon glyphicon-user" aria-hidden="true">-->
-            <!--  </span>-->
-            <!--  <br>-->
-            <!--  My Page-->
-            <!--  </a>-->
             <%= link_to user_path(id: current_user.id), class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
               <br/>

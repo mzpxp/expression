@@ -13,7 +13,7 @@ $gray-medium-light: #eaeaea;
 input, textarea, select, .uneditable-input {
   border: 10px solid #bbb;
   width: 300%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   @include box_sizing;
 }
 
@@ -56,7 +56,7 @@ aside {
     }
     h1 {
       font-size: 1.4em;
-      text-align: left;
+      text-align: center;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
@@ -82,7 +82,7 @@ aside {
   .user {
     margin-top: 5em;
     padding-top: 0;
-    color: #FFD5EC;
+    color: $gray-light;
   }
   .content {
     display: block;
@@ -93,7 +93,7 @@ aside {
     }
   }
   .timestamp {
-    color: #e0ffff;
+    color: $gray-light;
     display: block;
     margin-left: 60px;
   }

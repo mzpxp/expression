@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   get 'money', to: 'microposts#money'
   
   resources :users
-  resources :micropost
-  resources :microposts do
-    
+  # resources :micropost
   post   'microposts/:micropost_id/likes' , to: 'likes#create'
   delete 'microposts/:micropost_id/likes' , to: 'likes#destroy'
-
+  resources :microposts do
+  
   get 'top10', :on => :collection
  end
 end

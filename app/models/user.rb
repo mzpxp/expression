@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                    uniqueness: { case_sensitive: false }
  has_secure_password
  has_many :microposts
-
+ has_many :likes
  
  def feed_items(tag)
   if tag.nil? || tag == 'all'
