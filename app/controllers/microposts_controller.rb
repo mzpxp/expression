@@ -25,6 +25,18 @@ class MicropostsController < ApplicationController
     end
   end
   
+  # GET /microposts/top10
+  # GET /microposts/top10.json
+  def top10
+    # @microposts = micropost.top10
+    @microposts = Micropost.all
+    logger.debug "———————#{@microposts}———————"
+    respond_to do |format|
+      format.html # top10.html.erb
+      format.json { render json: @microposts }
+    end
+  end
+  
       private
   def micropost_params
     params.require(:micropost).permit(:content, :tag)

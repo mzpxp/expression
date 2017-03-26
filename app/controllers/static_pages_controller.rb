@@ -7,5 +7,13 @@ class StaticPagesController < ApplicationController
     end
   end
   
-
+  def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at: :desc)
+  end
+  
+  def timeline
+    @feed_items = Micropost.all.order(created_at: :desc)
+  end
+  
 end

@@ -1,3 +1,4 @@
+<% @microposts.each do |micropost| %>
 <li id="micropost-<%= micropost.id %>">
 
 <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
@@ -27,3 +28,5 @@
   <%= render "likes/like", micropost: micropost  %>
   </span>
 </li>
+
+<% end %>

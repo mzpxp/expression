@@ -11,8 +11,8 @@ $gray-medium-light: #eaeaea;
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
+  border: 10px solid #bbb;
+  width: 300%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -72,6 +72,7 @@ aside {
 /* microposts */
 
 .microposts {
+  padding-left: 100px;
   list-style: none;
   padding: 0;
   li {

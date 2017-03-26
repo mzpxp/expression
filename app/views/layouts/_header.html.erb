@@ -54,10 +54,22 @@
             <!--  <br>-->
             <!--  All-->
             <!--  </a>-->
-            <%= link_to  root_path, class: "btn btn-default" do %>
+            <%= link_to  timeline_path, class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
               <br/>
-              All
+              Timeline
+            <% end %>
+            
+            <!--<a href="/feed/Friends" class="btn btn-default " role="button">-->
+            <!--  <span class="glyphicon glyphicon-heart" aria-hidden="true">-->
+            <!--  </span>-->
+            <!--  <br>-->
+            <!--  Like-->
+            <!--  </a>-->
+            <%= link_to  top10_microposts_path, class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+              <br/>
+              Recommend
             <% end %>
             
             <!--<a href="https://" class="btn btn-default " role="button">-->
@@ -72,20 +84,13 @@
               Post
             <% end %>
             
-            <a href="/feed/Friends" class="btn btn-default " role="button">
-              <span class="glyphicon glyphicon-heart" aria-hidden="true">
-              </span>
-              <br>
-              Like
-              </a>
-              
             <!--<a href="/profile/current_user" class="btn btn-default" role="button">-->
             <!--  <span class="glyphicon glyphicon-user" aria-hidden="true">-->
             <!--  </span>-->
             <!--  <br>-->
             <!--  My Page-->
             <!--  </a>-->
-            <%= link_to  new_micropost_path, class: "btn btn-default" do %>
+            <%= link_to user_path(id: current_user.id), class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
               <br/>
               My Page

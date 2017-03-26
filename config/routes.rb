@@ -7,11 +7,16 @@ Rails.application.routes.draw do
   
   post "/" => "sessions#index"
   
+  get 'timeline' => "static_pages#timeline"
   get 'money', to: 'microposts#money'
   
   resources :users
-  resources :microposts
-
+  resources :micropost
+  resources :microposts do
+    
   post   'microposts/:micropost_id/likes' , to: 'likes#create'
   delete 'microposts/:micropost_id/likes' , to: 'likes#destroy'
+
+  get 'top10', :on => :collection
+ end
 end
