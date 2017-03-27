@@ -1,5 +1,10 @@
+<div class="col-md-8 col-md-offset-3">
+　　  <h1>Recommend　　　　　</h1>
+
 <% @microposts.each do |micropost| %>
 <li id="micropost-<%= micropost.id %>">
+
+<ol class="microposts">
 
 <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
 
@@ -23,10 +28,10 @@
                                        data: { confirm: "You sure?" } %>
  <% end %>
   </span>
-
   
   <span class="like-buttons_<%= micropost.id %>">
   <%= render "likes/like", micropost: micropost  %>
   </span>
 </li>
 <% end %>
+</div>
