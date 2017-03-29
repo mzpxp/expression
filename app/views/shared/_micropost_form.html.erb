@@ -3,16 +3,18 @@
   
 <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="field">
+  <div class="field" style="width:53%; margin:auto">
 
 <%= f.text_area :content, placeholder: "Show your pride...!" %>
 
   </div>
 
-<div class="field">
+<div class="field" style="width:53%; margin:auto">
   <%= select :micropost, :tag, ["all", "money", "job", "hobby", "love", "happy"]  %>
+  ※投稿テーマを選んでね。
 </div>
 
-<%= f.submit "Post", class: "btn btn-primary" %>
-
+<div class="field" style="width:53%; margin:auto">
+<%= f.submit "Post", class: "btn btn-primary"%>
+</div>
 <% end %>

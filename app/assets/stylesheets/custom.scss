@@ -10,15 +10,22 @@ $gray-medium-light: #eaeaea;
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 10px solid #bbb;
-  width: 300%;
+textarea, .uneditable-input {
+  border: 5px solid #bbb;
+  width: 400px;
+  height: 200px;
   margin-bottom: 10px;
   @include box_sizing;
 }
 
+select {
+border: 5px solid #bbb;
+padding : 7px;
+}
+
 input {
   height: auto !important;
+  margin : 15px;
 }
 
 #error_explanation {
@@ -85,8 +92,10 @@ aside {
     color: $gray-light;
   }
   .content {
+    margin-right: 10px;
     display: block;
-    margin-left: 60px;
+
+    
     img {
       display: block;
       padding: 5px 0;
@@ -110,3 +119,8 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+  .padding-underline {
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+  }

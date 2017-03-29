@@ -6,7 +6,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-<%= link_to "Home", root_path %>
+<%= link_to "Home", timeline_path %>
 </li>
 
 <% if logged_in? %>
@@ -43,7 +43,7 @@
     </nav>
   </div>
 </header>
-
+<% if logged_in? %>
 <div class="container">
   <div class ="row navbuttons">
     <div class="col-md-12">
@@ -74,3 +74,6 @@
             <% end %>
           </div>
         </div>
+      </div>
+    </div>
+  <% end %>

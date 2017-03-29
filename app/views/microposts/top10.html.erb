@@ -1,13 +1,14 @@
-<div class="col-md-8 col-md-offset-3">
-　　  <h1>Recommend　　　　　</h1>
+<div class="col-md-8 col-md-offset-2">
+　　  <h1 class="text-center">Recommend</h1>
 
 <% @microposts.each do |micropost| %>
-<li id="micropost-<%= micropost.id %>">
+<li id="micropost-<%= micropost.id%>" style="list-style: none;">
 
 <ol class="microposts">
 
 <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-
+  
+  <div>
   <span class="user">
     <% if micropost.user == current_user %>
       <%= current_user.name %>
@@ -15,9 +16,18 @@
       匿名
     <% end %>
   </span>
+  </div>
+  <div style="float:left">
   <span class="content">
 <%= micropost.content %>
   </span>
+  </div>
+  <div>
+   <span class="like-buttons_<%= micropost.id %>">
+  <%= render "likes/like", micropost: micropost  %>
+  </span>
+  </div>
+  <div>
   <span class="timestamp">
 <%= time_ago_in_words(micropost.created_at) %>
  ago.
@@ -28,10 +38,7 @@
                                        data: { confirm: "You sure?" } %>
  <% end %>
   </span>
-  
-  <span class="like-buttons_<%= micropost.id %>">
-  <%= render "likes/like", micropost: micropost  %>
-  </span>
+  </div>
 </li>
 <% end %>
 </div>

@@ -1,23 +1,23 @@
 <% if logged_in? %>
 
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
+    <!--<aside class="col-md-4">-->
+    <!--  <section class="user_info">-->
+    <!--    <%= render 'shared/user_info' %>-->
+    <!--  </section>-->
       
-    </aside>
+    <!--</aside>-->
 　　
-　　<div class="col-md-8 col-md-offset-3">　
-　　　<h1>Timeline　　　　　</h1><br>
-　　  
+　　<div class="col-md-8 col-md-offset-2">　
+　　　<h1 class="text-center">Timeline</h1>
+　　  <div style="width:57%; margin:auto">
 　　  <%= link_to "all", root_url({tag: 'all'}), :class => "btn btn-info" %> 
       <%= link_to "money", root_url({tag: 'money'}), :class => "btn btn-info" %>
       <%= link_to "job", root_url({tag: 'job'}), :class => "btn btn-info" %>
       <%= link_to "hobby", root_url({tag: 'hobby'}), :class => "btn btn-info" %>
       <%= link_to "love", root_url({tag: 'love'}), :class => "btn btn-info" %>
       <%= link_to "happy", root_url({tag: 'happy'}), :class => "btn btn-info" %>
-
+      </div>
       <%= render 'shared/feed' %>
     </div> 
   </div>
